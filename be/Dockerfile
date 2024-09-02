@@ -17,9 +17,6 @@ ENV PYTHONUNBUFFERED=1 \
 
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
-#psycopg requires these
-RUN apt-get update \
-    && apt-get -y install libpq-dev gcc
 # builder-base is used to build dependencies
 FROM python-base AS builder-base
 RUN buildDeps="build-essential" \

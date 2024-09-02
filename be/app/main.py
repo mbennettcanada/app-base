@@ -1,4 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends, HTTPException
+from sqlalchemy.orm import Session
+import schemas
+import models.users
+from database import get_db
 
 app = FastAPI()
 
@@ -11,3 +15,8 @@ async def root():
 @app.get("/hello/{name}")
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
+
+@app.get("/users/")
+async def get_users(db: Session = Depends(get_db)):
+    users = db.query(models.users.User).all()
+    return {"message": users}
