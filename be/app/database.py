@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:Bright#1270@192.168.86.34/fastapi'
+SQLALCHEMY_DATABASE_URL = 'postgresql://app:replac3M3@192.168.86.34/app'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
@@ -16,3 +16,6 @@ def get_db():
         yield db
     finally:
         db.close()
+
+def get_engine():
+    yield engine

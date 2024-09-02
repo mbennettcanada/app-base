@@ -2,10 +2,10 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 import schemas
 import models.users
-from database import get_db
+from database import get_db, engine
 
 app = FastAPI()
-
+models.users.Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 async def root():
