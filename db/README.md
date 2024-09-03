@@ -30,5 +30,8 @@ Then
 `sudo systemctl restart postgresql`
 
 ## Errors
-ERROR:  template database "template1" has a collation version mismatch
-fix: `ALTER DATABASE template1 REFRESH COLLATION VERSION;`
+- ERROR:  template database "template1" has a collation version mismatch
+    - fix: `ALTER DATABASE template1 REFRESH COLLATION VERSION;`
+
+- database "postgres" has a collation version mismatch
+    - fix: `ALTER DATABASE postgres REFRESH COLLATION VERSION;`

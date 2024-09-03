@@ -8,3 +8,12 @@
 5. Add deps `poetry add fastapi uvicorn sqlalchemy psycopg2` 
 
 To update python in conda, activate then: `conda update python`
+
+
+# Frontend setup (How I did this the first time)
+1. `npx create-react-app fe`
+2. `cd fe`
+3. `npm install axios react-router-dom`
+4. `npm audit fix --force`
+
+Then followed this pretty close: https://dev.to/oyedeletemitope/login-authentication-with-react-and-fastapi-397b
