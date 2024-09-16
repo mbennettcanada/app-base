@@ -7,6 +7,7 @@ class User(BaseModel):
     full_name: str | None = None
     disabled: bool | None = None
     hashed_password: str | None = None
+    user_role: str | None = None
 
     class Config:
         orm_mode = True

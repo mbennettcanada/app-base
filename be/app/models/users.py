@@ -12,3 +12,4 @@ class User(Base):
     disabled = Column(Boolean,nullable=False,default=False)
     hashed_password = Column(String, nullable = True)
     created_at = Column(TIMESTAMP(timezone=True), server_default=text('now()'))
+    user_role = Column(String,nullable=True)

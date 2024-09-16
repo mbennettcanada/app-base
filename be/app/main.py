@@ -80,6 +80,12 @@ async def get_current_active_user(
         raise HTTPException(status_code=400, detail="Inactive user")
     return current_user
 
+async def is_current_user_admin(
+    current_user: Annotated[schemas.User, Depends(get_current_user)],
+):
+    if current_user.user_role != "admin":
+        raise HTTPException(status_code=400, detail="Not an admin user")
+    return current_user
 
 @app.get("/")
 async def root():

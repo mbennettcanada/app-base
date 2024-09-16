@@ -17,3 +17,5 @@ To update python in conda, activate then: `conda update python`
 4. `npm audit fix --force`
 
 Then followed this pretty close: https://dev.to/oyedeletemitope/login-authentication-with-react-and-fastapi-397b
+
+until I got to the part that he stored plaintext passwords, the switched to following this: https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/#install-pyjwt 
